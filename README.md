@@ -30,12 +30,13 @@ This project follows a layered data modeling approach:
 
 ```mermaid
 graph TD
-stg_orders --> fct_order_items
-int_order_products_all --> fct_order_items
-dim_products --> fct_order_items
-fct_order_items --> mart_orders_by_day
+  A[stg_orders] --> D[fct_order_items]
+  B[int_order_products_all] --> D
+C[dim_products] --> D
+D --> E[mart_orders_by_day]
 
-Key Models
+## Key Models
+
 stg_orders: Cleans order-level data and derives day-of-the-week names
 
 stg_order_products_prior / train: Cleans order-product data from both datasets
@@ -50,7 +51,7 @@ mart_orders_by_day: Aggregated order trends by day of week
 
 
 
-Example Business Question
+## Example Business Question
 
 
 Which days of the week have the highest order volume and largest basket sizes?
@@ -64,8 +65,7 @@ Sunday has the highest number of orders and the largest average basket size, ind
 
 
 
-Testing
-
+## Testing
 
 dbt tests were implemented to ensure:
 
@@ -79,7 +79,8 @@ Valid categorical values
 
 
 
-How to Run
+## How to Run
+
 Clone the repository
 
 Create a virtual environment
@@ -98,7 +99,8 @@ dbt test
 dbt docs generate
 dbt docs serve
 
-What This Project Demonstrates
+## What This Project Demonstrates
+
 End-to-end data pipeline design
 
 Dimensional modeling (fact + dimension tables)
