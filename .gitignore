@@ -1,0 +1,22 @@
+# Python
+__pycache__/
+*.__pycache__*.Python*.pyd
+venv/
+.env
+
+# dbt
+target/
+dbt_packages/
+logs/
+
+# OS files
+.DS_Store
+
+# VS Code
+.vscode/
+
+# Mac
+*.swp
+
+# Credentials / secrets
+profiles.yml
