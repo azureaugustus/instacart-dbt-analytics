@@ -26,15 +26,7 @@ This project follows a layered data modeling approach:
 - **FACT**: Transactional table of order items
 - **MART**: Aggregated business-ready analytics
 
-## Data Model
 
-```mermaid
-graph TD
-  A[stg_orders] --> D[fct_order_items]
-  B[int_order_products_all] --> D
-  C[dim_products] --> D
-  D --> E[mart_orders_by_day]
-```
 
 ## Key Models
 
