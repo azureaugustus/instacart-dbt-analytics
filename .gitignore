@@ -11,6 +11,7 @@ logs/
 
 # OS files
 .DS_Store
+CACHEDIR.TAG
 
 # VS Code
 .vscode/
